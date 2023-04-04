@@ -47,7 +47,7 @@ export default function EmailVerification() {
   const userId = useSelector((state: RootState) => state.storage.userID);
   const jwt = useSelector((state: RootState) => state.storage.jwt);
   const dispatch = useDispatch();
-
+  
   // <----------------------sendVerificationMail function hits backend send OTP endpoint begins------------------->
   const sendVerificationMail = async () => {
     setSendEmailStatus(readyStatus.PENDING);

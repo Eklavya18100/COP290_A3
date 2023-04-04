@@ -54,6 +54,7 @@ export default function AuthModal() {
         }
       >
         {getModalContent()}
+        
       </ModalTemplate>
     )
   );
