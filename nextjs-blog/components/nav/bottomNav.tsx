@@ -2,39 +2,23 @@ import st from "./nav.module.scss";
 import React, {useEffect, useRef, useState} from "react";
 import Link from "next/link"
 import {useDispatch, useSelector} from 'react-redux'
-//import CircleImage from "@components/reusable/widgets/CircleImage";
 import { FETCH_USER_SUCCESS } from "../../redux/reducers/user";
-// import useOutsideDetector from "../../helpers/useOutsideDetector";
 import Router from 'next/router'
 import classNames from 'classnames'
-//import HeartList from "@components/icon/HeartList";
-//import Search from "@components/icon/Search";
-//import Plus from "@components/icon/Plus";
 import {modalTypes, SET_UX_VALUE} from "../../redux/reducers/ux";
 import {RootState} from '../../redux/reducers';
 
 export default function BottomNav({ search = true, createListing = true }) {
 
   const user = useSelector((state:RootState) => state.profile);
-
-
   const userReady = user.readyStatus === FETCH_USER_SUCCESS;
-
-
-
-  const [regionMenuActive, setRegionMenuActive] = useState(false)
-  const [accountMenuActive, setAccountMenuActive] = useState(false)
+  const [regionMenuActive, setRegionMenuActive] = useState(false);
+  const [accountMenuActive, setAccountMenuActive] = useState(false);
 
   const dispatch = useDispatch();
-
   const filterMenuActiveOnMobile = useSelector((state:RootState) => state.ux.filterMenuActiveOnMobile);
-
   const modalOpened = useSelector((state:RootState) => state.ux.modalType !== modalTypes.INVALID );
-
-  const titleRef = useRef(null);
-
-  // useOutsideDetector(titleRef, () => setAccountMenuActive(false));
-
+  
   return <React.Fragment>
     <div className={filterMenuActiveOnMobile ||  modalOpened ? classNames(st.filterMenuActiveOnMobile, st.bottomNav):st.bottomNav } data-cy='btmNav' >
       <div className={st.appNavRow } >

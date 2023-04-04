@@ -3,7 +3,7 @@ import React from "react";
 function SiteHead({title = 'AEEA'}) {
   return (
     <Head>
-      <title>AEEA</title>
+      <title>proVis</title>
       <link rel="icon" href="/logo.png"/>
     </Head>
   )

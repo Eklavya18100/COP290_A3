@@ -2,38 +2,19 @@ import st from "./nav.module.scss";
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
-import CircleImage from "@components/reusable/widgets/CircleImage";
-// import { FETCH_DETAIL_INFO_SUCCESS } from "../../redux/reducers/iam/profile";
-import { FETCH_USER } from "../../redux/actions/user.ts";
-import Logo from "@components/reusable/template/Logo.tsx";
-// import useOutsideDetector from "../../helpers/useOutsideDetector";
+import { FETCH_USER } from "../../redux/actions/user";
+import Logo from "@components/reusable/template/Logo";
 import { useRouter } from "next/router";
-import avatarSt from "@components/reusable/widgets/CircleImage/circularImage.module.scss";
 import {
-  modalTypes,
-  SET_AUTH_MODAL_PAGE,
   SET_UX_VALUE,
-} from "../../redux/reducers/ux.ts";
-import classNames from "classnames";
-import Region from "../../constants/Region.ts";
+} from "../../redux/reducers/ux";
 import { RootState } from "../../redux/reducers";
 import authModalPages from "../../constants/authModalPages";
 import styles from "./nav.module.scss";
-import { IoHeart } from "@react-icons/all-files/io5/IoHeart";
-import { IoIosTime } from "@react-icons/all-files/io/IoIosTime";
-import styleLib from "../../constants/styleLib";
-import useTranslation from "next-translate/useTranslation";
-import { IoMdHeartEmpty } from "@react-icons/all-files/io/IoMdHeartEmpty";
 import { IoHeartCircleOutline } from "@react-icons/all-files/io5/IoHeartCircleOutline";
-
 import { IoTimeOutline } from "@react-icons/all-files/io5/IoTimeOutline";
-
 import { IoPersonOutline } from "@react-icons/all-files/io5/IoPersonOutline";
-import ProfileModal from "@components/nav/profileModal.tsx";
-import setLanguage from "next-translate/setLanguage";
-// import Sidebar from "@components/sidebar/sidebar";
-
-const ddOptions = Object.keys(Region).map((k) => Region[k]);
+import ProfileModal from "@components/nav/profileModal";
 
 export default function Nav({
   theme = "light",
@@ -47,55 +28,10 @@ export default function Nav({
   transparentNav,
   darkBg,
 }) {
-  let [burgerOpened, setBurgerOpened] = useState(true);
-
-  const { t } = useTranslation("common");
-  const { lang } = useTranslation();
+  
   const router = useRouter();
-
   const { isLoggedIn } = useSelector((state: RootState) => state.storage);
-  const user = useSelector((state: RootState) => state.profile);
-
-  const [offset, setOffset] = useState(0);
-
-  const featuresItems = [
-    {
-      title: "product_comparison",
-      link: "/product-comparison",
-    },
-    {
-      title: "financial_planning",
-      link: "/financial-planning",
-    },
-    {
-      title: "dna_insurfit_solution",
-      link: "/dna-insurfit-solution",
-    },
-  ];
-
-  if (transparentNav) {
-    useEffect(() => {
-      window.onscroll = () => {
-        setOffset(window.pageYOffset);
-      };
-    }, []);
-  }
-
-  // const userReady = user.readyStatus === FETCH_DETAIL_INFO_SUCCESS;
-  const userReady=true;
-  const currentState = useSelector(
-    (state: RootState) => state.ux.filterMenuActiveOnMobile
-  );
-
-  const toggleFilterMenu = () => {
-    dispatch({
-      type: SET_UX_VALUE,
-      key: "filterMenuActiveOnMobile",
-      value: !currentState,
-    });
-  };
-  const [regionMenuActive, setRegionMenuActive] = useState(false);
-
+  const userReady=false;
   const dispatch = useDispatch();
 
   const profileModalActive = useSelector(
@@ -104,12 +40,10 @@ export default function Nav({
 
   useEffect(() => {
     if (isLoggedIn && !userReady) {
-      dispatch({ type: FETCH_USER });
+      // dispatch({ type: FETCH_USER });//!fix it. Make a call function here
     }
   }, [isLoggedIn]);
 
-  const regionMenuRef = useRef(null);
-  // useOutsideDetector(regionMenuRef, () => setRegionMenuActive(false));
 
   return (
     <React.Fragment>
@@ -149,40 +83,16 @@ export default function Nav({
           {outsideApp ? (
             <div className={st.nav}>
               <Link href={"/"} passHref>
-                <div className={st.dropbtn}>{t("home")}</div>
+                <div className={st.dropbtn}>{"home"}</div>
               </Link>
               <Link href={"/about"} passHref>
-                <div className={st.dropbtn}>{t("about")}</div>
+                <div className={st.dropbtn}>{"about"}</div>
               </Link>
-              <div className={st.dropdown}>
-                <div className={st.dropbtn}>{t("features")}</div>
-                <div className={st.dropdown_content}>
-                  {featuresItems.map((item) => (
-                    <Link href={item.link}>{t(item.title)}</Link>
-                  ))}
-                </div>
-              </div>
+              
               <Link href={"/contact"} passHref>
-                <div className={st.dropbtn}>{t("contact")}</div>
+                <div className={st.dropbtn}>{"contact"}</div>
               </Link>
-              <Link href={"/app"} passHref>
-                <div className={st.dropbtn} style={{ color: "pink" }}>
-                  {t("early_access")}
-                </div>
-              </Link>
-              <div className={st.vl}></div>
-              <div
-                className={st.dropbtnenglish}
-                onClick={async () => await setLanguage("en")}
-              >
-                English
-              </div>
-              <div
-                className={st.dropbtnchinese}
-                onClick={async () => await setLanguage("zh")}
-              >
-                繁體中文
-              </div>
+             
             </div>
           ) : null}
           {noProfile ? null : (
@@ -196,13 +106,7 @@ export default function Nav({
                   >
                     <IoHeartCircleOutline color={"#999"} size={32} />
                   </button>
-                  <button
-                    className={styles.viewInfoTab}
-                    onClick={() => router.push("/app/my-history")}
-                    style={{ cursor: "pointer" }}
-                  >
-                    <IoTimeOutline color={"#999"} size={30} />
-                  </button>
+                
                   <button
                     onClick={() =>
                       dispatch({

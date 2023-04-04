@@ -1,6 +1,6 @@
-import apiEngine from "./apiEngine.ts";
-import { GET, POST, PUT, PATCH } from "./methods.ts";
-import config from '../../config.ts';
+import apiEngine from "./apiEngine";
+import { GET, POST, PUT, PATCH } from "./methods";
+import config from '../../config';
 
 const apiUrl = config.apiUrl
 

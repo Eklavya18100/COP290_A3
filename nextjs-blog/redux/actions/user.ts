@@ -2,10 +2,10 @@ import {
   FETCH_USER_FAILURE,
   FETCH_USER_SUCCESS,
   FETCH_USER_REQUESTING
-} from "../reducers/user.ts";
+} from "../reducers/user";
 
 export const FETCH_USER = 'FETCH_USER';
-import userApi from '../api/user.ts'
+import userApi from '../api/user'
 import { all, select, put, call, fork } from "redux-saga/effects"
 import * as Eff from "redux-saga/effects"
  

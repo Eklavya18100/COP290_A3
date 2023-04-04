@@ -2,8 +2,8 @@ import {createStore, applyMiddleware} from 'redux';
 import logger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 import {createWrapper} from 'next-redux-wrapper';
-import reducer from './reducers/index.ts';
-import rootSaga from './actions/index.ts';
+import reducer from './reducers/index';
+import rootSaga from './actions/index';
 import {composeWithDevTools} from 'redux-devtools-extension'
 
 const makeStore = (context) => {

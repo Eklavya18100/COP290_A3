@@ -3,7 +3,7 @@ import Head from "@components/head/Head";
 import Nav from "../../nav/Nav";
 // import Sidebar from '@components/sidebar/sidebar';
 import st from "./template.module.scss";
-// import Footer from "./Footer";
+import Footer from "./Footer";
 import { useDispatch, useSelector } from "react-redux";
 import authModalPages from "../../../constants/authModalPages";
 // import ErrorBanner from "@components/reusable/template/error/errorBanner";
@@ -42,11 +42,11 @@ export default function PageTemplate({
     (state: RootState) => state.ux.authModalPage
   );
 
-  // const overlayActive: boolean = useSelector(
-  //   (state: RootState) => state.ux.profileModalActive
-  // );
-
-  // const [width, setWidth] = useState(window.innerWidth);
+  const overlayActive: boolean = useSelector(
+    (state: RootState) => state.ux.profileModalActive
+  );
+  const dispatch=useDispatch();
+  const [width, setWidth] = useState(window.innerWidth);
   const breakpoint = 768;
 
   // useEffect(() => {
@@ -57,13 +57,12 @@ export default function PageTemplate({
   //   }
   // }, [modalActive]);
 
-  // useEffect(() => {
-  //   const handleWindowResize = () => setWidth(window.innerWidth);
-  //   window.addEventListener("resize", handleWindowResize);
-  //   return () => window.removeEventListener("resize", handleWindowResize);
-  // }, []);
+  useEffect(() => {
+    const handleWindowResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleWindowResize);
+    return () => window.removeEventListener("resize", handleWindowResize);
+  }, []);
 
-  // const dispatch = useDispatch();
 
   const getContent = () => {
     if (dashboard) {
@@ -100,7 +99,7 @@ export default function PageTemplate({
       `}</style>
       <Head />
       <main className={st.app}>
-        {/* {overlayActive ? (
+        {overlayActive ? (
           <div
             onClick={() => {
               dispatch({
@@ -111,26 +110,8 @@ export default function PageTemplate({
             }}
             className={st.globalOverlay}
           />
-        ) : null} */}
-        {/* <ErrorBanner /> */}
-        {/* {noNav ? null : width > breakpoint ? (
-          <Nav
-            theme={theme}
-            outsideApp={outsideApp}
-            customComponent={customComponent}
-            noSearch={noSearch}
-            noFilter={noFilter}
-            noCreateListing={noCreateListing}
-            noProfile={noProfile}
-            noRegion={noRegion}
-            transparentNav={transparentNav}
-            darkBg={darkBg}
-          />
-        ) : (
-          <ErrorBanner />
-        )
-        // <Sidebar />
-        } */}
+        ) : null}
+       
         <Nav
           theme={theme}
           outsideApp={outsideApp}
@@ -143,13 +124,13 @@ export default function PageTemplate({
           transparentNav={transparentNav}
           darkBg={darkBg}
         />
-        {/* {noNav || transparentNav ? null : <div className={st.navPadding} />} */}
+        {noNav || transparentNav ? null : <div className={st.navPadding} />}
         {getContent()}
         {authModalPage !== authModalPages.INVALID ? <AuthModel /> : null}
       </main>
-      {/*{ noBottomNav ?  null : <BottomNav/> }*/}
-      {/* {noFooter ? null : <Footer footerBorderTop={footerBorderTop} />}
-      <CookiePopup /> */}
+      {/* { noBottomNav ?  null : <BottomNav/> } */}
+      {noFooter ? null : <Footer footerBorderTop={footerBorderTop} />}
+   
     </div>
   );
 }
