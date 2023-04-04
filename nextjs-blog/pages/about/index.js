@@ -2,82 +2,54 @@ import React from "react";
 import PageTemplate from "@components/reusable/template/PageTemplate.tsx";
 import st from "./about.module.scss";
 import useTranslation from "next-translate/useTranslation";
-// import Animation from "../../components/reusable/template/Animation";
+import Animation from "../../components/reusable/template/Animation";
 import { VscChevronDown } from "@react-icons/all-files/vsc/VscChevronDown";
 // import Header from "../components/header";
 // import Footer from "../components/reusable/template/Footer.tsx";
 
 export default function About() {
-  const { t } = useTranslation("about");
+  
 
   const wwo = [
     {
-      title1: "1.Compare",
-      title2: "Insurance Products",
-      desc: "In term of insurance coverage terms, premiums, and various KPIs.",
-      img: "/web/about/about1.svg",
+      title1: "1.Home design ",
+      title2: "professionals",
+      desc: "We provide access to a vast database of home design professionals, including architects, interior designers, and contractors, which can help homeowners find the right professionals for their home renovation projects.",
+      img: "/about/worker.png",
     },
     {
-      title1: "2.Product",
-      title2: "Illustration",
-      desc: "Instant real time quotation and interactive value throughout the insurance period.",
-      img: "/web/about/about2.svg",
-    },
-    {
-      title1: "3.Financial",
-      title2: "Planning",
+      title1: "2.Communication ",
+      title2: "tools",
       desc: "From education savings, retirement planning, life protection to wealth inherited.",
-      img: "/web/about/about3.svg",
+      img: "/about/about2.svg",
     },
     {
-      title1: "4.AI Driven",
-      title2: "Insurance Analysis",
-      desc: "Find out the best insurance solution to cope with the common health diseases including cancer, heart attract, stroke, diabetes etc.",
-      img: "/web/about/about4.png",
+      title1: "3.Inspirational ",
+      title2: "design ideas",
+      desc: "Users can create ideabooks on proVis to save and organize their favorite design ideas, photos, and articles.",
+      img: "/about/hand.png",
+    },
+  
+    {
+      title1: "4.Mobile ",
+      title2: "app",
+      desc: "proVis has a mobile app that allows users to access all the platform's features on the go.",
+      img: "/about/booking.png",
     },
   ];
 
   return (
     <PageTemplate transparentNav={false} outsideApp darkBg={true} noFilter>
-      {/* return <div> */}
-
-      {/* <div className={st.mobileCircle} /> */}
-
-      {/* <div className={st.banner}>
-        <div className={st.circle}>{"Let's"}</div>
-        <div className={st.headers}>
-          <div className={st.largeHeader}>Change How We Manage Insurance</div>
-          <div className={st.smallHeader}>
-            iProtect is a digital online platform that provides AI-driven
-            insurance solutions. We help to analyze more than 100 hottest
-            insurance products from over 30 insurance companies in Hong Kong
-            covering savings insurance, medical insurance, critical illness
-            insurance, retirement annuity, and others.
-          </div>
-          <div
-            className={st.contactUs}
-            // onClick={() => {
-            //   window.scrollTo(0, document.body.scrollHeight);
-            // }}
-          >
-            <p>Contact Us</p>
-            <VscChevronDown size={"100px"} />
-          </div>
-        </div>
-      </div> */}
+      
 
       <div className={st.banner}>
         <div className={st.circle} />
         <div className={st.largeHeader} highlightword="Let's">
           {" "}
-          Change How We Manage Insurance
+          design our house
         </div>
         <div className={st.smallHeader}>
-          iProtect is a digital online platform that provides AI-driven
-          insurance solutions. We help to analyze more than 100 hottest
-          insurance products from over 30 insurance companies in Hong Kong
-          covering savings insurance, medical insurance, critical illness
-          insurance, retirement annuity, and others.
+        proVis is an online platform that offers a wide range of services related to home design and renovation.We provide a comprehensive platform for homeowners and design professionals, offering a wide range of tools and resources that can help simplify the home renovation process.
         </div>
         <div className={st.contactUs}>
           <p>Contact Us</p>
@@ -89,7 +61,7 @@ export default function About() {
         <div className={st.wwo}>
           {wwo.map((offer, index) =>
             index % 2 == 0 ? (
-              // <Animation>
+              <Animation>
                 <div
                   key={index}
                   className={st.wwo_item}
@@ -109,9 +81,9 @@ export default function About() {
                     </div>
                   </div>
                 </div>
-              // </Animation>
+               </Animation>
             ) : (
-              // <Animation fadeFromRight>
+              <Animation fadeFromRight>
                 <div
                   key={index}
                   className={st.wwo_item}
@@ -134,13 +106,12 @@ export default function About() {
                     </div>
                   </div>
                 </div>
-              // </Animation>
+             </Animation>
             )
           )}
         </div>
       </div>
-      {/* <Footer /> */}
-      {/* </div> */}
+    
     </PageTemplate>
   );
 }

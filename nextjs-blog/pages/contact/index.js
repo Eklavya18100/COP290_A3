@@ -5,18 +5,18 @@ export default function Contact() {
 
   const contactData = [
     {
-      imgUrl: "/icon/contact1.svg",
-      desc: "4/F, Jockey Club Innovation Tower, The Hong Kong Polytechnic University, Hung Hom, Kowloon, Hong Kong.",
+      imgUrl: "/contact/location.png",
+      desc: "22, Cornwall Street, Downtown LA, New jersey, Washington, NY ",
       type: "address",
     },
     {
-      imgUrl: "/icon/contact2.svg",
-      desc: "info@iprotect.hk",
+      imgUrl: "/contact/email.png",
+      desc: "info@proVis.in",
       type: "email",
     },
     {
-      imgUrl: "/icon/contact3.svg",
-      desc: "9879 6414",
+      imgUrl: "/contact/phone-call.png",
+      desc: "+917398757031",
       type: "phone",
     },
   ];
@@ -25,7 +25,7 @@ export default function Contact() {
     <PageTemplate outsideApp>
       <div className={st.mainContainer}>
         <div>
-          <h1>Contact iProtect</h1>
+          <h1>Contact proVis</h1>
           <p>Let's discuss how we can help you!</p>
         </div>
         <div>

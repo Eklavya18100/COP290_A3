@@ -4,7 +4,7 @@ export default function Logo({ height }) {
     <img
       style={{ height: height }}
       alt={"proVis Logo"}
-      src={"/proVis_logo.png"}
+      src={"/navbar/proVis_logo.jpg"}
     />
   );
 }

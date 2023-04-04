@@ -19,7 +19,7 @@ export default function ProfileIcon({imageUrl= null,
 
   return <img
         alt={'profile'}
-        // src="/iprotect_logo.png"
+        src="/login/account.png"
         // src={getImg('default_avatar')}
         style={{height: size, width:size, borderRadius: borderRadius,
         borderWidth: 6, borderColor: '#fff'}}

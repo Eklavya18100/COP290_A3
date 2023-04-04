@@ -5,9 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { FETCH_USER } from "../../redux/actions/user";
 import Logo from "@components/reusable/template/Logo";
 import { useRouter } from "next/router";
-import {
-  SET_UX_VALUE,
-} from "../../redux/reducers/ux";
+import { SET_UX_VALUE } from "../../redux/reducers/ux";
 import { RootState } from "../../redux/reducers";
 import authModalPages from "../../constants/authModalPages";
 import styles from "./nav.module.scss";
@@ -28,10 +26,9 @@ export default function Nav({
   transparentNav,
   darkBg,
 }) {
-  
   const router = useRouter();
   const { isLoggedIn } = useSelector((state: RootState) => state.storage);
-  const userReady=false;
+  const userReady = false;
   const dispatch = useDispatch();
 
   const profileModalActive = useSelector(
@@ -43,7 +40,6 @@ export default function Nav({
       // dispatch({ type: FETCH_USER });//!fix it. Make a call function here
     }
   }, [isLoggedIn]);
-
 
   return (
     <React.Fragment>
@@ -83,16 +79,16 @@ export default function Nav({
           {outsideApp ? (
             <div className={st.nav}>
               <Link href={"/"} passHref>
-                <div className={st.dropbtn}>{"home"}</div>
+               
+                <div className={st.dropbtn}> <p className={st.navText}>{"Home"}</p></div>
               </Link>
               <Link href={"/about"} passHref>
-                <div className={st.dropbtn}>{"about"}</div>
+                <div className={st.dropbtn}><p className={st.navText}>{"About Us"}</p></div>
               </Link>
-              
+
               <Link href={"/contact"} passHref>
-                <div className={st.dropbtn}>{"contact"}</div>
+                <div className={st.dropbtn}><p className={st.navText}>{"Contact Us"}</p></div>
               </Link>
-             
             </div>
           ) : null}
           {noProfile ? null : (
@@ -106,7 +102,7 @@ export default function Nav({
                   >
                     <IoHeartCircleOutline color={"#999"} size={32} />
                   </button>
-                
+
                   <button
                     onClick={() =>
                       dispatch({
@@ -149,6 +145,25 @@ export default function Nav({
           )}
         </div>
       </div>
+      {/* <header>
+            <nav className="navbar">
+                
+                <img src = {logo} className="nav--img1" /> 
+                <div className="nav--text">proVis</div>
+                <img src = {search} className="nav--img2" /> 
+                <img src = {user_icon}  className="nav--img3" /> 
+                <h3 >
+                    <ul className="nav--list">
+                        <li className="login">Log In</li>
+                        <li className="signup">Sign Up</li>
+                        <li className="about-us">About Us</li>
+                    </ul>
+                </h3>
+            </nav>
+            
+            
+
+        </header> */}
     </React.Fragment>
   );
 }

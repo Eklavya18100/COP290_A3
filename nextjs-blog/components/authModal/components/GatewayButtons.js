@@ -40,7 +40,7 @@ export default function GatewayButtons() {
               iconComponent={
                 <img
                   style={{ height: 32, width: 32 }}
-                  src="https://insurtech.hk/app/icons/google.png"
+                  src="/login/google.png"
                 />
               }
             />

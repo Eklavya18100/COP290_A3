@@ -90,17 +90,27 @@ $border-color: black;
         height: fit-content;
         margin: auto 0;
         padding: calc(6px + 0.4vw);
+
         font-size: calc(10px + 0.4vw);
-        color:'pink';
+        color: "pink";
         -webkit-transition: all 0.2s ease-in-out;
         -moz-transition: all 0.2s ease-in-out;
         -o-transition: all 0.2s ease-in-out;
         transition: all 0.2s ease-in-out;
-       
       }
-      .dropbtn:hover{
-          transform:scale(1.1);
-          color:'black';
+      .navText {
+        font-family: "Source Sans Pro", sans-serif;
+        font-weight: bold;
+        padding: calc(2px + 0.6vw);
+        border-radius: 50%;
+      }
+      .navText:hover {
+        background-color: black;
+        color: rgb(228, 225, 225);
+      }
+      .dropbtn:hover {
+        // background-color:black;
+        transform: scale(1.1);
       }
       .dropbtnenglish {
         cursor: pointer;
@@ -531,7 +541,6 @@ $border-color: black;
         height: 60px;
       }
     }
-   
 
     .propertySearchTab {
       @extend .searchTab;
@@ -862,10 +871,8 @@ $border-color: black;
   &.hidden {
     display: none;
   }
-
 }
 
-
-.viewInfoTab:hover{
- transform: scale(1.1);
+.viewInfoTab:hover {
+  transform: scale(1.1);
 }
