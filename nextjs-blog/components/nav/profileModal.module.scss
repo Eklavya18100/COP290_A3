@@ -1,0 +1,189 @@
+@import '../../styles/theme';
+.profileModalContainer{
+  position: fixed;
+  background: #fafafa;
+  height:max-content;
+  width: 20vw;
+  z-index: 30;
+  top: 60px;
+  right: 10px;
+  border: 1px solid #ccc;
+  padding: 4px 16px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  overflow: hidden;
+  border-radius: 20px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.profileModalContainer *{
+// outline: 1px solid limegreen;
+}
+
+.overlay{
+  z-index: 5;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background: rgba($black, 0.05);
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.userContainer{
+  display: flex;
+  flex-direction: row;
+
+}
+
+.userHead{
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+
+  h4{
+    margin: 0;
+    padding: 0 10px;
+    color: #777;
+    font-weight: 400;
+  }
+
+  .userImgContainer{
+    border: transparent;
+    background: none;
+    align-items: center;
+    img{
+      width: 80px;
+      height: 40px;
+      border-radius: 50%;
+    }
+  }
+}
+
+.quota{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 5px 0;
+}
+.addCircleCont{
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.addCircleCont:hover{
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.quotaListContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  // border-bottom: 1px solid #eee;
+}
+
+.quotaList{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 0;
+  img{
+    width: 30px;
+    // margin-right: 10px;
+  }
+}
+
+.totalSection{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: none;
+  background: none;
+  color: #777;
+  font-weight: 400;
+  margin: 0;
+  width: 100%;
+  align-self: stretch;
+}
+
+.totalSectionTitleImg{
+  width: 20px;
+}
+
+.buttonRow{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 6px 0;
+  cursor: pointer;
+  box-sizing: border-box;
+  border: none;
+  background: none;
+  justify-content: space-between;
+  width: 100%;
+  border-top: 1px solid #eee;
+  h4{
+    margin: 0;
+    font-size: 20px;
+    font-weight: 400;
+    color: #555;
+  }
+}
+
+.quotaListTitle{
+  color: #777;
+  font-weight: 300;
+  margin: 0;
+
+}
+
+.totalSectionTitle{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100% !important;
+  justify-content: space-between;
+  border: none;
+  background: none;
+  color: #777;
+  font-weight: 300;
+  cursor: pointer;
+  h4 {
+    margin: 0;
+  }
+}
+
+
+// added three media queries so the profile modal container looks nice
+@media screen and (max-width: 1000px) {
+  .profileModalContainer{
+    width: 20vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+ .profileModalContainer{
+  width: 50vw;
+ } 
+}
+
+@media screen and (max-width: 500px) {
+  .profileModalContainer{
+    width: 90vw;
+  }
+}

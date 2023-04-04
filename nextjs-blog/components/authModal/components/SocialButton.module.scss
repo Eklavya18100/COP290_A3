@@ -1,0 +1,75 @@
+.buttonContainer{
+  margin-top: 16px;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+  overflow: hidden;
+  width: 300px;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  // border:2px solid red;
+}
+
+.button{
+  border:0;
+
+  flex: 1;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  .buttonIcon{
+    width: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .buttonTextContainer{
+    flex: 1;
+    justify-content: center; align-items: center;
+  }
+  .buttonText{
+    font-weight: bold;
+    font-size: 18px;
+  }
+}
+$colors: (
+
+  // close: #ff7f82, 
+  raise: #ef6eae, 
+
+);
+// Size can also be negative; see how it's smaller than the element
+.raise:hover,
+.raise:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em rgb(92, 30, 30);
+  transform: translateY(-0.25em);
+}
+@each $button, $color in $colors {
+  .#{$button} {
+    --color: #{$color};
+    --hover: #{adjust-hue($color, 45deg)};
+  }
+}
+.raise {  
+  color: var(--color);
+  transition: 0.25s;
+  
+  &:hover,
+  &:focus { 
+    border-color: var(--hover);
+    color: #fff;
+  }
+}
+.raise {
+  background: none;
+  // border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 1em;
+  // padding: 1em 2em;
+}

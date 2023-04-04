@@ -1,0 +1,239 @@
+// these imports are not getting used so it gets commented!
+// @import "../styles/mixin.scss";
+// @import "../styles/theme.scss";
+
+.banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 100px 0px;
+    height: 92vh;
+    width: 100%;
+    padding: 10vh 50px;
+  }
+  .circle {
+    transition: all 0.2s ease-in-out;
+    background-color: #e13d6f;
+    border-radius: 50%;
+    width: 125px;
+    height: 125px;
+    margin-top: 10px;
+    z-index: 0;
+    position: absolute;
+  }
+  .headers {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .largeHeader[highlightword] {
+    font-weight: 700;
+    line-height: 50px;
+    margin-top: 50px;
+    text-align: left;
+    font-size: 50px;
+    color: black;
+    z-index: 1;
+  }
+  
+  .largeHeader[highlightword]::before {
+    content: attr(highlightword);
+    color: white;
+  }
+  
+  .smallHeader {
+    text-align: left;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: flex-start;
+    font-size: 20px;
+  }
+  
+  .contactUs {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    color: #e13d6f;
+    // flex-direction: row-reverse;
+    // flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+  }
+  .contactUs > *:last-child {
+    transition: all 0.2s ease-in-out;
+  }
+  .contactUs > *:last-child:hover {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  
+  .whatWeOffer {
+    .header {
+      font-weight: 700;
+      font-size: 2rem;
+      margin: 5vh auto;
+      position: sticky;
+      z-index: 10;
+      background-color: rgba(255, 255, 255, 0.506);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      top: 8.5vh;
+      padding: 0 10px;
+      width: fit-content;
+    }
+  
+    .wwo {
+      // margin: 0 5%;
+      margin: auto auto 15vh auto;
+      display: flex;
+      flex-direction: column;
+      width: 90vw;
+      gap: 10vh;
+  
+      .wwo_item {
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: space-between;
+        border-radius: 20px;
+        padding: 50px 100px;
+        height: 35vh;
+        transition: all 0.2s ease-in-out;
+  
+        .left {
+          width: 50%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+  
+          .title {
+            font-weight: 700;
+            width: 100%;
+            align-items: center;
+            font-size: 2rem;
+  
+            .title1,
+            .title2 {
+              font-size: 2rem;
+              width: fit-content;
+            }
+            .title2 {
+              color: #ffffff;
+            }
+          }
+  
+          .desc {
+            width: 100%;
+            text-align: left;
+          }
+        }
+  
+        .right {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+      }
+      .wwo_item:hover {
+        -webkit-transform: scale(1.05);
+        -moz-transform: scale(1.05);
+        -o-transform: scale(1.05);
+        transform: scale(1.05);
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+      }
+    }
+  }
+  
+  .title1[highlightword] {
+    color: #000000;
+  }
+  .title1[highlightword]::before {
+    content: attr(highlightword);
+    color: #c24181;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .left {
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  
+    .right {
+      width: 30%;
+    }
+  
+    .left,
+    .right {
+      padding: 2vw;
+    }
+  
+    .left *,
+    .right * {
+      margin: 0 !important;
+      padding: 0 !important;
+      text-align: center !important;
+      width: 100% !important;
+    }
+  
+    .right img {
+      aspect-ratio: 1;
+      width: 100%;
+      object-fit: contain;
+    }
+    .wwo {
+      gap: 5vh !important;
+    }
+    .wwo_item {
+      padding: 0 !important;
+      display: flex;
+      height: fit-content !important;
+      justify-content: center !important;
+    }
+  
+    .title {
+      width: 100%;
+      flex-direction: column;
+    }
+  
+    .banner {
+      margin: 0 auto;
+      padding: 2vh 0;
+      width: 90vw;
+      flex-direction: column;
+    }
+  
+    .banner * {
+      // border: 1px solid black;
+    }
+    .largeHeader {
+      margin-top: 0px !important;
+    }
+    // .mobileCircle {
+    //   display: block;
+    // }
+    // .circle {
+    //   background-color: transparent !important;
+    // }
+    .largeHeader[highlightword]::before,
+    .largeHeader[highlightword] {
+      color: white;
+      font-size: 2.5rem !important;
+    }
+    .circle {
+      width: 400px;
+      height: 400px;
+      position: absolute;
+      top: -100px;
+      left: -25px;
+    }
+  }
+  

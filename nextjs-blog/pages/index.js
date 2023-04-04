@@ -1,7 +1,9 @@
-import Head from 'next/head';
-import styles from '../styles/Home.module.css';
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const router = useRouter();
   return (
     <div className={styles.container}>
       <Head>
@@ -13,7 +15,22 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
-
+        <button
+          // className={st.viewInfoTab}
+          onClick={() => router.push("/about")}
+          style={{ cursor: "pointer" }}
+        >
+          {/* <IoHeartCircleOutline color={'#999'} size={32}/> */}
+          about us
+        </button>
+        <button
+          // className={st.viewInfoTab}
+          onClick={() => router.push("/contact")}
+          style={{ cursor: "pointer" }}
+        >
+          {/* <IoHeartCircleOutline color={'#999'} size={32}/> */}
+          contact us
+        </button>
         <p className={styles.description}>
           Get started by editing <code>pages/index.js</code>
         </p>
@@ -55,7 +72,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <img src="/vercel.svg" alt="Vercel" className={styles.logo} />
         </a>
       </footer>
@@ -111,5 +128,5 @@ export default function Home() {
         }
       `}</style>
     </div>
-  )
+  );
 }

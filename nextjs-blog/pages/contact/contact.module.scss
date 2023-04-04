@@ -1,0 +1,112 @@
+.mainContainer {
+    width: 90vw;
+    margin: 4vw auto;
+    background-color: black;
+    height: fit-content;
+    padding: 4vw;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 4vw;
+  }
+  
+  .mainContainer > div:first-child {
+    border-radius: 15px;
+    margin-top: 4vw;
+    color: white;
+  }
+  
+  .mainContainer > div:first-child > h1 {
+    font-size: 60px;
+  }
+  
+  .mainContainer > div:last-child {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 30px;
+    padding: 5vw;
+  }
+  
+  .mainContainer > div:last-child > div {
+    padding: 1vw;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.5vw;
+    width: 30%;
+    // height: 50vh;
+  }
+  
+  .mainContainer > div:last-child > div p {
+    text-align: center;
+  }
+  
+  .mainContainer > div:last-child > div p:hover,
+  .mainContainer > div:last-child > div a:hover {
+    text-decoration: underline;
+  }
+  
+  .mainContainer > div:last-child > div:hover {
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  .mainContainer > div:last-child > div img {
+    width: 35%;
+    margin: 0 auto;
+    aspect-ratio: 1;
+  }
+  
+  .mainContainer > div:first-child > p {
+    font-size: 30px;
+  }
+  .mainContainer > div:last-child a {
+    color: black;
+    text-decoration: none;
+    text-align: center;
+  }
+  
+  .mainContainer > div:last-child p,
+  .mainContainer > div:last-child a {
+    font-size: 24px;
+    font-weight: 700;
+  }
+  
+  .mainContainer > div:last-child > div:first-child p {
+    font-size: 12px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .mainContainer > div:last-child {
+      flex-direction: column;
+      padding: 10vw;
+      gap: 5vh;
+    }
+  
+    .mainContainer > div:last-child > div img {
+      width: 40%;
+    }
+    .mainContainer > div:last-child > div {
+      gap: 5vw;
+      padding: 5vw;
+      width: 100%;
+    }
+    .mainContainer > div:last-child p,
+    .mainContainer > div:last-child a {
+      margin: auto;
+      text-align: center;
+      font-size: 20px;
+    }
+  }
+  

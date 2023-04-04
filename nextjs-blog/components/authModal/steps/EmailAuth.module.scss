@@ -1,0 +1,74 @@
+.EmailAuth, {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // padding: 2rem;
+  // border:2px solid black;
+
+}
+
+.EmailAuthForm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ProfileIcon{
+  width: 12vw;
+  border: 2px solid black;
+}
+
+.ButtonList{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid red;
+  &> button{
+    background-color: white;
+    border: none;
+  }
+}
+.InputRow{
+
+  .Icon{
+    width: 2rem;
+    height: 2rem;
+    background-size: contain;
+  }
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 0.5rem auto;
+}
+
+.ForgetPassword{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: flex-end;
+  button{
+    float: right;
+    border: none;
+    background: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  h4{
+    font-size: 16px;
+    font-weight: 300;
+  }
+}
+
+.SubmitButton{
+  border: none;
+  background-color: #313474;
+  color: white;
+  padding: 0;
+  cursor: pointer;
+  h4{
+    margin: 0.5rem;
+  }
+}
+

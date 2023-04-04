@@ -1,0 +1,47 @@
+{
+    "compilerOptions": {
+      "baseUrl": "./",
+      "typeRoots": [
+        "src/@types"
+      ],
+      "paths": {
+        "@components/*": [
+          "components/*"
+        ],
+        "@utils/*": [
+          "utils/*"
+        ],
+        "@helpers/*": [
+          "helpers/*"
+        ],
+      },
+      "target": "es5",
+      "downlevelIteration": true,
+      "lib": [
+        "dom",
+        "dom.iterable",
+        "esnext"
+      ],
+      "allowJs": true,
+      "skipLibCheck": true,
+      "strict": false,
+      "forceConsistentCasingInFileNames": true,
+      "noEmit": true,
+      "esModuleInterop": true,
+      "module": "esnext",
+      "moduleResolution": "node",
+      "resolveJsonModule": true,
+      "isolatedModules": true,
+      "jsx": "preserve",
+      "incremental": true
+    },
+    "include": [
+      "next-env.d.ts",
+      "**/*.ts",
+      "**/*.tsx"
+  , "components/dna/DnaHealthRiskList.js", "components/authModal/components/spinner/index.tsx", "components/authModal/components/SocialButton.js"  ],
+    "exclude": [
+      "node_modules"
+    ]
+  }
+  
