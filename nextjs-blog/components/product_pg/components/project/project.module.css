@@ -1,0 +1,15 @@
+.project{
+    display : flex ; 
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0px 2.9px 7.4px rgba(74, 45, 45, 0.3);
+    border-radius: 5% ;
+    padding : 0px ; 
+    width : 300px;
+}
+
+.project_name {
+    padding: 10px;
+}
+
+

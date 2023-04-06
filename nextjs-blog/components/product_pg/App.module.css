@@ -1,0 +1,25 @@
+.container{
+    display: grid; 
+    grid-template-columns: 840px 400px ;
+    grid-template-rows: 540px auto ; 
+}
+
+.header{
+    grid-column: 1/2 ;
+    grid-row: 1/2 ;
+    margin-bottom : 30px ;
+}
+
+.sticky { 
+    position : sticky ; 
+    top : 0 ; 
+}
+.request_btn{
+    grid-column: 2/-1;
+    grid-row: 1/-1; 
+}
+
+.main_content{
+    grid-row: 2/-1 ; 
+    grid-column: 1/2 ;
+}

@@ -89,6 +89,9 @@ export default function Nav({
               <Link href={"/contact"} passHref>
                 <div className={st.dropbtn}><p className={st.navText}>{"Contact Us"}</p></div>
               </Link>
+              <Link href={"/product_pg"} passHref>
+                <div className={st.dropbtn}><p className={st.navText}>{"Product page"}</p></div>
+              </Link>
             </div>
           ) : null}
           {noProfile ? null : (

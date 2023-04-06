@@ -1,0 +1,87 @@
+.main_content{
+    display : flex  ; 
+    flex-direction: column;
+    justify-content: center;
+    font-family: Inria Sans;
+    font-weight: 400;
+    font-size: 25px;
+    margin-left : 97.62045288085938px;
+    margin-top : 40px ;
+}
+
+.projects{
+    display : grid ; 
+    width : 40px;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.heading {
+    font-family: Inria Sans;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 38px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom : 15px ; 
+}
+
+.SeparatorRoot {
+    background-color: var(--violet6);
+    height : 5px ; 
+  }
+
+
+.nav > a{
+    
+    margin-right : 9px ; 
+    text-decoration: none;
+  }
+
+.nav > a:link{
+    color : #8c8c8c ; 
+    
+}
+
+
+
+.nav >a:visited{
+    color : #8c8c8c ; 
+}
+.nav > a:hover{
+    color: black ; 
+}
+
+.greybg{
+    background-color: #e1dfe6; ;
+}
+
+.business_label{
+    font-weight: 600;
+    color : black ;
+}
+
+.business_item{
+    font-family : Inria Sans;
+    margin-top : 15px ;
+    color : #8c8c8c;
+}
+
+.business_text{
+    color : #8c8c8c;
+}
+
+.website_link>a:link{
+    color : #8c8c8c;
+    text-decoration: none ;
+}
+
+.website_link>a:hover{
+    color : black;
+    text-decoration: none ;
+}
+
+.website_link>a:visited{
+    color : #8c8c8c;
+    text-decoration: none ;
+}

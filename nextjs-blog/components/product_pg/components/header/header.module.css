@@ -1,0 +1,50 @@
+/* header  */
+.header{ 
+    display : grid ; 
+    grid-template-columns: 1fr 6.755fr;
+    grid-template-rows: 3.633fr 1fr; 
+    height : 470px ; 
+    width : 640px ; 
+    row-gap: 53px; 
+    column-gap: 27px;
+    margin-left : 97.62045288085938px ; 
+    margin-top: 20px;
+  }
+  
+  .header_img{
+    grid-column: 1/-1 ; 
+    grid-row: 1/2 ;
+    height: 368px;
+  }
+  
+  .company_img{
+    grid-column: 1/2 ;
+    grid-row: 2/-1 ;
+    width :  100% ; 
+    margin-right: 10%; 
+  }
+  
+  .contractor_info{
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+  
+  
+    grid-column: 2/-1 ;
+    grid-row : 2/-1 ; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: flex-start; 
+  }
+  
+  .rating_reviews, .category{
+    font-size: 15px;
+    line-height: 19px;
+  }
+  
+  .img1, .img2 {
+    width: 100%;
+    height: 100%;
+  }
