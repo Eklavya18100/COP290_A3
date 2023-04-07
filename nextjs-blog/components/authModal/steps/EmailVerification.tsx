@@ -98,34 +98,7 @@ export default function EmailVerification() {
       const responseJson = await response.json();
 
       if (responseJson.status < 400) {
-        const userInfo = responseJson.data.info;
-        dispatch({
-          type: SET_STORAGE_ITEM,
-          key: "jwt",
-          value: responseJson.data.token,
-        });
-        dispatch({
-          type: SET_STORAGE_ITEM,
-          key: "userID",
-          value: userInfo.cus_uid,
-        });
-        dispatch({
-          type: SET_STORAGE_ITEM,
-          key: "userType",
-          value: "customer",
-        });
-        dispatch({ type: SET_STORAGE_ITEM, key: "isLoggedIn", value: true });
-        dispatch({
-          type: SET_STORAGE_ITEM,
-          key: "loginType",
-          value: "email",
-        });
-        dispatch({
-          type: SET_STORAGE_ITEM,
-          key: "userName",
-          value: userInfo.username,
-        });
-        localStorage.setItem("token", responseJson.data.token);
+        
 
         dispatch({ type: SET_AUTH_MODAL_PAGE, value: authModalPages.SUCCESS });
 

@@ -21,6 +21,7 @@ export default function EmailAuth() {
   const [loading, setLoading] = useState(false);
   const [show, setShow] = useState(false);
   const [rePassword, setRePassword] = useState("");
+  const [name, setName] = useState("");
   const [isHovering, setIsHovering] = useState(false);
 
   // <------------------save all account info after making requests to the backend API begins----------------->
@@ -29,11 +30,11 @@ export default function EmailAuth() {
     setPassword("");
     setLoading(false);
 
-    const userInfo = responseJson.data.info;
+    const userInfo = responseJson.info;
     dispatch({
       type: SET_STORAGE_ITEM,
       key: "jwt",
-      value: responseJson.data.token,
+      value: responseJson.token,
     });
     dispatch({
       type: SET_STORAGE_ITEM,
@@ -49,7 +50,7 @@ export default function EmailAuth() {
       value: userInfo.username,
     });
     setLoading(false);
-    localStorage.setItem("token", responseJson.data.token);
+    localStorage.setItem("token", responseJson.token);
 
     dispatch({ type: SET_AUTH_MODAL_PAGE, value: authModalPages.SUCCESS });
   };
@@ -67,10 +68,10 @@ export default function EmailAuth() {
     } else if (password !== rePassword) {
       alert("register_warn_4");
     } else {
-      const name = email.replace(/@.*$/, "");
+      // const name = email.replace(/@.*$/, "");
       setLoading(true);
       try {
-        const response = await fetch(`${apiUrl}/email-register`, {
+        const response = await fetch(`${apiUrl}/api/user/emailRegister`, {
           method: "POST",
           headers: {
             Accept: "application/json",
@@ -88,21 +89,44 @@ export default function EmailAuth() {
         setLoading(false);
 
         if (responseJson.status < 400) {
+          const userInfo = responseJson.info;
+        dispatch({
+          type: SET_STORAGE_ITEM,
+          key: "jwt",
+          value: responseJson.token,
+        });
+        dispatch({
+          type: SET_STORAGE_ITEM,
+          key: "userID",
+          value: userInfo.cus_uid,
+        });
+        dispatch({
+          type: SET_STORAGE_ITEM,
+          key: "userType",
+          value: "customer",
+        });
+        dispatch({ type: SET_STORAGE_ITEM, key: "isLoggedIn", value: true });
+        dispatch({
+          type: SET_STORAGE_ITEM,
+          key: "loginType",
+          value: "email",
+        });
+        dispatch({
+          type: SET_STORAGE_ITEM,
+          key: "userName",
+          value: userInfo.username,
+        });
+        localStorage.setItem("token", responseJson.token);
           dispatch({
             type: SET_AUTH_MODAL_PAGE,
             value: authModalPages.EMAIL_VERIFICATION,
           });
         } else {
-          const index = responseJson.errors.findIndex(
-            (e) => e.code === "USER_EXISTED"
-          );
-          console.log("error index::" + index);
-          if (index >= 0) {
+          
             alert("user exists");
-          }
-        }
-      } catch (error) {
-        console.log(error);
+          
+      }} catch (error) {
+        alert(error);
       }
     }
     setLoading(false);
@@ -126,22 +150,23 @@ export default function EmailAuth() {
       setLoading(false);
     } else {
       try {
-        const response = await fetch(`${apiUrl}/email-login`, {
+        const response = await fetch(`${apiUrl}/api/user/emailLogin`, {
           method: "POST",
           headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            email: email,
-            password: password,
+            "email_id": email,
+            "password": password,
           }),
         });
         const responseJson = await response.json();
+
         if (responseJson.status < 400) {
           saveAccountInfo(responseJson, "email");
         } else {
-          alert("Please enter valid credentials");
+          alert(" Please enter valid credentials");
         }
       } catch (error) {
         alert(error);
@@ -264,6 +289,17 @@ export default function EmailAuth() {
                   Please, enter your email, password and password confirmation
                   for sign up.
                 </legend>
+                <div className={styles.inputBlock}>
+                  <label htmlFor="signupEmail">Username</label>
+                  <input
+                    id="signupusername"
+                    type="text"
+                    required
+                    placeholder={"Enter username"}
+                    autoCapitalize="none"
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                </div>
                 <div className={styles.inputBlock}>
                   <label htmlFor="signupEmail">E-mail</label>
                   <input
