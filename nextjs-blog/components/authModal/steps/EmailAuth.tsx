@@ -29,11 +29,11 @@ export default function EmailAuth() {
     setPassword("");
     setLoading(false);
 
-    const userInfo = responseJson.data.info;
+    const userInfo = responseJson.info;
     dispatch({
       type: SET_STORAGE_ITEM,
       key: "jwt",
-      value: responseJson.data.token,
+      value: responseJson.token,
     });
     dispatch({
       type: SET_STORAGE_ITEM,
@@ -49,7 +49,7 @@ export default function EmailAuth() {
       value: userInfo.username,
     });
     setLoading(false);
-    localStorage.setItem("token", responseJson.data.token);
+    localStorage.setItem("token", responseJson.token);
 
     dispatch({ type: SET_AUTH_MODAL_PAGE, value: authModalPages.SUCCESS });
   };
@@ -70,7 +70,7 @@ export default function EmailAuth() {
       const name = email.replace(/@.*$/, "");
       setLoading(true);
       try {
-        const response = await fetch(`${apiUrl}/email-register`, {
+        const response = await fetch(`${apiUrl}/api/user/emailRegister`, {
           method: "POST",
           headers: {
             Accept: "application/json",
@@ -126,22 +126,23 @@ export default function EmailAuth() {
       setLoading(false);
     } else {
       try {
-        const response = await fetch(`${apiUrl}/email-login`, {
+        const response = await fetch(`${apiUrl}/api/user/emailLogin`, {
           method: "POST",
           headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            email: email,
-            password: password,
+            "email_id": email,
+            "password": password,
           }),
         });
         const responseJson = await response.json();
+
         if (responseJson.status < 400) {
           saveAccountInfo(responseJson, "email");
         } else {
-          alert("Please enter valid credentials");
+          alert(" Please enter valid credentials");
         }
       } catch (error) {
         alert(error);
