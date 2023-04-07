@@ -1,15 +1,16 @@
 // import logo from './logo.svg';
+import React from "react";
 import st from "../../styles/product_pg/App.module.css"
 import project_data from "./data/projects";
 import { useRouter } from 'next/router'
-import config from "../../../config";
+import config from "../../config";
 import { useDispatch, useSelector } from "react-redux";
 import {useEffect} from "react"
 import Navbar from "./components/navbar";
 import Header from "./components/header";
 import Request_Btn from "./components/request_btn";
 import MainContent from "./components/main-content";
-
+import PageTemplate from '../reusable/template/PageTemplate';
 // id : 1 ,
 //         company_name: "Influitive",
 //         category: "Civil Engineers & Contractors",
@@ -45,19 +46,19 @@ function App() {
     aboutus : {is : "", description : ""}
   })
 
-  useEffect( () => {
-    fetch(`${apiUrl}/product_profiles/${slug.id}`, {
-      method : 'GET', 
-      headers: {
-        "Content-Type": "application/json" 
-          // Authorization: `Bearer ${jwt}`,
-      },
-    }).then((response) => response.json().then(
-      (data) => {
-        SetState(data) ; 
-      }
-    ))
-  }, [])
+  // useEffect( () => {
+  //   fetch(`${apiUrl}/product_profiles/${slug.id}`, {
+  //     method : 'GET', 
+  //     headers: {
+  //       "Content-Type": "application/json" 
+  //         // Authorization: `Bearer ${jwt}`,
+  //     },
+  //   }).then((response) => response.json().then(
+  //     (data) => {
+  //       SetState(data) ; 
+  //     }
+  //   ))
+  // }, [])
 
   function genobj(data){
     let about_us = data.about_us 
@@ -80,8 +81,9 @@ function App() {
   // };
 
   return (
-    <div>
-      <Navbar className={st.navbar} />
+   <PageTemplate transparentNav={false} outsideApp darkBg={true} noFilter>
+     <div>
+      {/* <Navbar className={st.navbar} /> */}
       <div className={st.container}>
         <Header
           header_image_url={url1}
@@ -107,6 +109,7 @@ function App() {
         <MainContent obj={genobj(profileState)} className={st.main_content} />
       </div>
     </div>
+   </PageTemplate>
   );
 }
 
