@@ -1,5 +1,5 @@
-import Project from "../project/project"
-import st from "./main-content.module.css" 
+import Project from "./project"
+import st from "../../../styles/product_pg/main_content.module.css"
 import * as Separator from '@radix-ui/react-separator';
 
 export default function MainContent(props){
@@ -7,7 +7,7 @@ export default function MainContent(props){
     let project_cards = obj.projects.map( (x) => <Project project = {x} /> ) 
 
     return(
-        <>
+        
         <div className={st.main_content}>
             <header>
                 <nav className={st.nav}>
@@ -97,6 +97,6 @@ export default function MainContent(props){
 
             </div> */}
         </div>
-        </>
+        
     )
 }

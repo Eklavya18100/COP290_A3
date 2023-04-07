@@ -21,6 +21,6 @@ export default {
   verifyMail: (data) =>apiEngine(POST,
       `${apiUrl}/verify-email`,
       { data: data }),
-  sendVerifyMail: data => apiEngine(GET,
+  sendVerifyMail: (data) => apiEngine(GET,
       `${apiUrl}/send-verification-mail`),
 }

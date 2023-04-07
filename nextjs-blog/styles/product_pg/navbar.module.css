@@ -1,0 +1,98 @@
+/* navbar  */ 
+.navbar{
+    margin-bottom : 10px; 
+    display: flex; 
+    align-items: center;
+    flex-direction: row;
+    height : 177.21px ;
+    width : 100% ; 
+    box-shadow: 0px 2.9px 7.4px rgba(74, 45, 45, 0.3);
+    font-family: 'Outfit', sans-serif;
+    background-color: #e1dfe6;  
+      /* color: #61DAFB ;  */
+  }
+  
+  .nav_text{
+    
+    font-size: 90px;
+    font-weight: 700;
+    line-height: 113px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-right : auto ; 
+  }
+  
+  .nav_list{
+    display : flex ; 
+    list-style: none ;
+    align-items: center;
+    flex-flow: row;
+  }
+  
+  .nav_list >li {
+    margin : 10px ; 
+  }
+  
+  .nav_img1{
+    height: 92px;
+    width: 97.62045288085938px; 
+    border-radius: 10px;
+    margin-right : 15.94px ; 
+    margin-left : 10px ; 
+  }
+  
+  .nav_img2{
+    margin-right : 44.74px ; 
+    height: 40px;
+    width: 37.891557693481445px;
+  
+  }
+  
+  .nav_img3{
+    height: 35.83333206176758px;
+    width: 35.694549560546875px;
+    border-radius: 4px;
+  
+  }
+  
+  .login{
+    height: 35px;
+    width: 82px;
+    border-radius: 4px;
+    padding: 5px 13px 5px 13px;
+    border: 1px solid #070707;
+  
+    font-family: 'Outfit' , sans-serif;
+    /* font-size: 20px; */
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0.02em;
+    text-align: left;
+  
+    
+  }
+  
+  .signup{
+    width: 89px;
+    height: 33px;
+    padding: 4px 9.5px ; 
+    background: #070707;
+    border-radius: 4px;
+    color : white ; 
+  
+    font-weight: 400;
+    margin-right : 14px ; 
+    /* font-size: 20px; */
+    /* line-height: 25px; */
+    /* letter-spacing: 0.02em; */
+  }
+  
+  .about_us{
+    width: 106.59px;
+    height: 30px;
+    font-weight: 400;
+    font-size: 25px;
+    text-align: center;
+  
+  }
+  

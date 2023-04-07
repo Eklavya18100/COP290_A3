@@ -26,7 +26,7 @@ const reducers = combineReducers({
   login,
   register,
 
-  profile,
+  profile, 
 
   securityToken,
   storage,

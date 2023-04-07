@@ -1,12 +1,14 @@
 // import logo from './logo.svg';
-import st from "./App.module.css";
+import st from "../../styles/product_pg/App.module.css"
 import project_data from "./data/projects";
-
-// import React from "react"
-import Navbar from "./components/navbar/navbar";
-import Header from "./components/header/header";
-import Request_Btn from "./components/request_btn/request_btn";
-import MainContent from "./components/main-content/main-content";
+import { useRouter } from 'next/router'
+import config from "../../../config";
+import { useDispatch, useSelector } from "react-redux";
+import {useEffect} from "react"
+import Navbar from "./components/navbar";
+import Header from "./components/header";
+import Request_Btn from "./components/request_btn";
+import MainContent from "./components/main-content";
 
 // id : 1 ,
 //         company_name: "Influitive",
@@ -19,24 +21,63 @@ import MainContent from "./components/main-content/main-content";
 //         rating : "4"
 
 function App() {
-  let url1 =
-    "https://img.staticmb.com/mbcontent//images/uploads/2022/12/Most-Beautiful-House-in-the-World.jpg";
-  let url2 =
-    "https://s3.amazonaws.com/cdn.designcrowd.com/blog/100-Famous-Brand%20Logos-From-The-Most-Valuable-Companies-of-2020/apple-logo.png";
+  let router = useRouter() 
+  // let url1 =
+  //   "https://img.staticmb.com/mbcontent//images/uploads/2022/12/Most-Beautiful-House-in-the-World.jpg";
+  // let url2 =
+  //   "https://s3.amazonaws.com/cdn.designcrowd.com/blog/100-Famous-Brand%20Logos-From-The-Most-Valuable-Companies-of-2020/apple-logo.png";
 
-  let business_details = {
-    name: "Aaveg",
-    address: "B250, MG Road, New Manglapuri Mehrauli- Gurgaon Road South Delhi",
-    phone_number: 9205231951,
-    website: "www.treac.in",
-  };
+  
 
-  let obj = {
-    about_us:
-      "TR Engineer and Contractor. Construction and renovation services. Www.trengineer.com",
-    projects: project_data,
-    business_details: business_details,
-  };
+
+  let slug = router.query 
+  let url1 = slug.product_img_url 
+  let url2 = slug.company_img_url 
+  
+  const jwt = useSelector((state) => state.storage.jwt);
+
+  const { apiUrl } = config;
+
+  let [profileState, SetState] = React.useState({
+    p_uid : "", 
+    projects : [{ id : "", project_name : "", project_address : "", project_img_url : ""}],
+    business: {id : "", contractor_id : "", website_link : "", address : "",},
+    aboutus : {is : "", description : ""}
+  })
+
+  useEffect( () => {
+    fetch(`${apiUrl}/product_profiles/${slug.id}`, {
+      method : 'GET', 
+      headers: {
+        "Content-Type": "application/json" 
+          // Authorization: `Bearer ${jwt}`,
+      },
+    }).then((response) => response.json().then(
+      (data) => {
+        SetState(data) ; 
+      }
+    ))
+  }, [])
+
+  function genobj(data){
+    let about_us = data.about_us 
+    let business_details = { name : slug.contractor_name, address : data.business.address, website : data.business.website_link}
+    let project_data = data.projects.map((x) => { return {name : x.project_name, img : x.project_img_url} } )
+    return {about_us, business_details, projects : project_data} 
+  }
+  // let business_details = {
+  //   name: "Aaveg",
+  //   address: "B250, MG Road, New Manglapuri Mehrauli- Gurgaon Road South Delhi",
+  //   phone_number: 9205231951,
+  //   website: "www.treac.in",
+  // };
+
+  // let obj = {
+  //   about_us:
+  //     "TR Engineer and Contractor. Construction and renovation services. Www.trengineer.com",
+  //   projects: project_data,
+  //   business_details: business_details,
+  // };
 
   return (
     <div>
@@ -47,8 +88,8 @@ function App() {
           company_img_url={url2}
           no_of_reviews={162}
           rating="4"
-          contractor="Aaveg"
-          category="Civil Engineers & Contractors"
+          contractor= {slug.contractor_name} 
+          category= {slug.category}
           className={st.header}
         />
         <div className={st.sticky}>
@@ -59,10 +100,11 @@ function App() {
             label="Message"
             modal_btn_text="Send"
             className={st.request_btn}
+            p_uid = {slug.id} 
           />
         </div>
 
-        <MainContent obj={obj} className={st.main_content} />
+        <MainContent obj={genobj(profileState)} className={st.main_content} />
       </div>
     </div>
   );

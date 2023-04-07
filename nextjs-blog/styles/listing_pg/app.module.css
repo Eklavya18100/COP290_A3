@@ -1,0 +1,66 @@
+
+/* app  */
+
+.container{
+    font-family: 'Inria Sans', sans-serif ;
+    margin-top: 20px;
+    display : grid ; 
+    width : 308px ; 
+    height : 276px ;  
+    grid-template-columns: 1fr 2.711fr;
+    grid-template-rows: 1fr 10fr ;
+    column-gap: 76px;
+    margin-left: 40px;
+  }
+  
+  .display_tags{
+    /* background-color: #6C63FF;  */
+    grid-column: 2/-1 ;
+    grid-row: 1/2 ; 
+    display : flex; 
+    flex-direction: row;
+    align-items: center;
+    
+  }
+  
+  .tag{
+    background-color: #6C63FF; 
+    border-radius : 10px;
+    color: white;
+    /* padding: 15px 32px; */
+    text-align: center;
+    /* text-decoration: none; */
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    margin: auto 10px;
+    /* cursor: pointer; */
+    /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 			        rgba(0,0,0,0.19); */
+  }
+  
+  .tag_button{
+    margin-left: 6px;
+    margin-right : 6px ; 
+    border-radius : 50% ; 
+    cursor: pointer;
+  }
+  
+  .img_button{
+    width : 10px ; 
+    height : 10px ; 
+    
+  }
+  
+  
+  .search_bars{
+    width : 280px ; 
+    grid-column: 1/2 ;
+    grid-row: 1/-1; 
+    display : flex ; 
+    flex-direction: column;
+   
+    align-content: flex-start;
+  }
+  
+  

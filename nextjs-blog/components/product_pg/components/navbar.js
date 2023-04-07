@@ -2,7 +2,7 @@
 // import logo from "/product_pg/logo.jpg" 
 // import search from "../../public/Ellipse\ 65.jpg" 
  
-import st from "./navbar.module.css"
+import st from "../../../styles/product_pg/navbar.module.css"
 
 export default function Navbar() { 
     return (

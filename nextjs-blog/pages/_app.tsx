@@ -1,3 +1,6 @@
+import "../styles/globals.css";
+
+
 import React, { useEffect } from "react";
 // import "react-vis/dist/style.css";
 // import "../styles/global.scss";

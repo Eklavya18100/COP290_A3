@@ -7,7 +7,7 @@
     height : 177.21px ;
     width : 100% ; 
     box-shadow: 0px 2.9px 7.4px rgba(74, 45, 45, 0.3);
-    font-family: Outfit;
+    font-family: 'Outfit', sans-serif;
     background-color: #e1dfe6;  
       /* color: #61DAFB ;  */
   }
@@ -62,7 +62,7 @@
     padding: 5px 13px 5px 13px;
     border: 1px solid #070707;
   
-    font-family: Outfit , sans-serif;
+    font-family: 'Outfit' , sans-serif;
     /* font-size: 20px; */
     font-weight: 400;
     line-height: 25px;
