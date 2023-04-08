@@ -15,7 +15,7 @@ import {
 } from "../../../../redux/reducers/iam/codeLogin";
 import ResetPasswordTemplate from "./template";
 import ReactCodeInput from "@components/authModal/components/CodeField";
-import Spinner from "@components/reusable/loader/spinner";
+import Spinner from "@components/authModal/components/spinner";
 import { RootState } from "../../../../redux/reducers";
 import { CODE_LOGIN_SUCCESS } from "../../../../redux/reducers/iam/codeLogin";
 import { SET_AUTH_MODAL_PAGE } from "redux/reducers/ux";

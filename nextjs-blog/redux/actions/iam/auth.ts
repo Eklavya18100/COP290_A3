@@ -3,17 +3,17 @@ import {
   LOGIN_SUCCESS,
   LOGIN_FAILURE,
   LOGIN_REQUESTING,
-} from '../../reducers/iam/login.ts'
+} from '../../reducers/iam/login'
 
 import {
   REGISTER_INVALID,
   REGISTER_REQUESTING,
   REGISTER_SUCCESS,
   REGISTER_FAILURE
-} from '../../reducers/iam/register.ts'
+} from '../../reducers/iam/register'
 
-import { SET_STORAGE_ITEM } from '../../reducers/storage.ts';
-import { SET_AUTH_MODAL_PAGE } from '../../reducers/ux.ts';
+import { SET_STORAGE_ITEM } from '../../reducers/storage';
+import { SET_AUTH_MODAL_PAGE } from '../../reducers/ux';
 
 import authModalPages from '../../../constants/authModalPages';
 

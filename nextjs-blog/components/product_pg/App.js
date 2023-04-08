@@ -11,7 +11,7 @@ import Navbar from "./components/navbar";
 import Header from "./components/header";
 import Request_Btn from "./components/request_btn";
 import MainContent from "./components/main-content";
-import PageTemplate from '../reusable/template/PageTemplate';
+
 // id : 1 ,
 //         company_name: "Influitive",
 //         category: "Civil Engineers & Contractors",
