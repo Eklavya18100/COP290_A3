@@ -25,7 +25,8 @@ export default function AuthModal() {
   const getModalContent = () => {
     switch (authModalPage) {
       case authModalPages.GATEWAY:
-        return <Gateway />;
+        // return <Gateway />;
+        return <EmailAuth />;
       case authModalPages.EMAIL_AUTH:
         return <EmailAuth />;
       case authModalPages.EMAIL_VERIFICATION:
