@@ -52,21 +52,21 @@ export default function EmailVerification() {
   const sendVerificationMail = async () => {
     setSendEmailStatus(readyStatus.PENDING);
     try {
-      const response = await fetch(`${apiUrl}/send-verification-mail`, {
-        method: "GET",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${jwt}`,
-        },
-      });
-      const responseJson = await response.json();
-      console.log(responseJson);
-      if (responseJson.status < 400) {
+      // const response = await fetch(`${apiUrl}/send-verification-mail`, {
+      //   method: "GET",
+      //   headers: {
+      //     Accept: "application/json",
+      //     "Content-Type": "application/json",
+      //     Authorization: `Bearer ${jwt}`,
+      //   },
+      // });
+      // const responseJson = await response.json();
+      
+      // if (responseJson.status < 400) {
         setEmailSentAtLeastOnce(true);
         setSendEmailStatus(readyStatus.SUCCESS);
         setVerifyEmailStatus(readyStatus.INVALID);
-      }
+      // }
     } catch (err) {
       setEmailSentAtLeastOnce(true);
       setSendEmailStatus(readyStatus.SUCCESS);
