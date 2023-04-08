@@ -1,8 +1,10 @@
 // import logo from './logo.svg';
+import React from "react"
+import PageTemplate from "@components/reusable/template/PageTemplate.tsx";
 import st from "../../styles/product_pg/App.module.css"
 import project_data from "./data/projects";
 import { useRouter } from 'next/router'
-import config from "../../../config";
+import config from "../../config";
 import { useDispatch, useSelector } from "react-redux";
 import {useEffect} from "react"
 import Navbar from "./components/navbar";
@@ -56,7 +58,7 @@ function App() {
       (data) => {
         SetState(data) ; 
       }
-    ))
+    )).catch((err) => console.error(err));
   }, [])
 
   function genobj(data){
@@ -80,8 +82,9 @@ function App() {
   // };
 
   return (
+    <PageTemplate transparentNav={false} outsideApp darkBg={true} noFilter>
     <div>
-      <Navbar className={st.navbar} />
+      
       <div className={st.container}>
         <Header
           header_image_url={url1}
@@ -107,6 +110,7 @@ function App() {
         <MainContent obj={genobj(profileState)} className={st.main_content} />
       </div>
     </div>
+  </PageTemplate>
   );
 }
 
