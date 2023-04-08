@@ -2,6 +2,7 @@
 import React , {useEffect} from "react";
 import { useRouter } from 'next/router'
 
+import config from "../../config" 
 import PageTemplate from "@components/reusable/template/PageTemplate.tsx";
 import Navbar from "./components/navbar"
 import Listing_Box  from "./components/listing_box";
@@ -65,8 +66,9 @@ function App() {
   // let [newCategory,setCategoryState] = React.useState("Interior Designers & Decorators") 
 
   let [newState, SetState] = React.useState({location : "", category : ""}) 
-
   let [cardsState, setCardsState] = React.useState([]) 
+
+  let {apiURL} = config
   
 
   function locationHandler(location){
@@ -104,7 +106,7 @@ function App() {
 
   
 useEffect(() => {
-  fetch(`/products?location=${newState.location}&category=${newState.category}` , {
+  fetch(`${apiURL}/api/products?location=${newState.location}&category=${newState.category}` , {
     method : 'GET', 
       headers: {
         "Content-Type": "application/json" 

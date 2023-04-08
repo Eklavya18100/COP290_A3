@@ -20,7 +20,7 @@ export default function Card(props) {
                             </div>
                             <img src=""/> 
                         </div>
-                        <button className= {st.btn}>Connect</button>
+                        <button className= {st.btn} onClick={props.clicker}>Connect</button>
                     </div>
                     <div className={st.details2}>
                         {obj.description}

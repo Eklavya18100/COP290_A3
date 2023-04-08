@@ -5,21 +5,11 @@ import PageTemplate from "@components/reusable/template/PageTemplate";
 import Animation from "../../components/reusable/template/Animation";
 import { VscChevronDown } from "@react-icons/all-files/vsc/VscChevronDown";
 
+import App from "../../components/dashboard/App"
 export default function Dashboard(){
-    const user = useSelector(
-        (state: RootState) => state.user 
-      );
-    
-      const dispatch = useDispatch() 
-
-      const { isLoggedIn } = useSelector((state: RootState) => state.storage);
-      
-
-     
-    
+   
     return (
-        <PageTemplate transparentNav={false} outsideApp darkBg={true} noFilter >
-
-        </PageTemplate>
-    )
+        <App />
+    );
+    
 }

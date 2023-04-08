@@ -23,6 +23,7 @@
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
     "@formspree/react": "^2.2.3",
+    "@headlessui/react": "^1.7.13",
     "@material-ui/icons": "^4.11.3",
     "@mui/icons-material": "^5.8.4",
     "@next/bundle-analyzer": "^11.0.1",
@@ -120,7 +121,9 @@
     "@types/react": "^17.0.3",
     "critters": "^0.0.10",
     "cypress": "^7.2.0",
+    "del": "^7.0.0",
     "eslint": "^8.20.0",
+    "gulp": "^4.0.2",
     "sass": "^1.45.0",
     "typescript": "^4.3.5"
   }

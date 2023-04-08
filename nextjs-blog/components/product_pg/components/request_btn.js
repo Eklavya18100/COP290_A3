@@ -51,7 +51,7 @@ export default function Request_Btn(props) {
   }
 
   
-  const jwt = useSelector((state) => state.storage.jwt);
+  // const jwt = useSelector((state) => state.storage.jwt);
   async function handleSubmit(event) { 
       
       const { apiUrl } = config;
@@ -59,7 +59,7 @@ export default function Request_Btn(props) {
       request_body.order_date =  getCurrentDateTimeString()
       request_body.exchange_emails = msgState ;
 
-      const response = await fetch(`${apiUrl}/customer/orders`, {
+      const response = await fetch(`${apiUrl}/api/customer/orders`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

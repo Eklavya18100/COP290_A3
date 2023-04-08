@@ -150,6 +150,7 @@ export default function EmailAuth() {
       setLoading(false);
     } else {
       try {
+        console.log(`${apiUrl}/api/user/emailLogin`);
         const response = await fetch(`${apiUrl}/api/user/emailLogin`, {
           method: "POST",
           headers: {

@@ -48,7 +48,7 @@ function App() {
   })
 
   useEffect( () => {
-    fetch(`${apiUrl}/product_profiles/${slug.id}`, {
+    fetch(`${apiUrl}/api/product_profiles/${slug.id}`, {
       method : 'GET', 
       headers: {
         "Content-Type": "application/json" 
