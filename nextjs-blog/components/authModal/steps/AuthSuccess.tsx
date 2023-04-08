@@ -38,7 +38,7 @@ export default function AuthSuccess() {
         <button
           className={styles.button30}
           onClick={() => {
-            router.push("/app");
+            router.push("/");
             dispatch({
               type: SET_AUTH_MODAL_PAGE,
               value: authModalPages.INVALID,

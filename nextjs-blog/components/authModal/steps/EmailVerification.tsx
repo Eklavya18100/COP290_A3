@@ -84,15 +84,15 @@ export default function EmailVerification() {
     }
     setVerifyEmailStatus(readyStatus.PENDING);
     try {
-      const response = await fetch(`${apiUrl}/verify-email`, {
+      const response = await fetch(`${apiUrl}/api/user/verifyEmail`, {
         method: "POST",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          token: value,
-          user: userId,
+          otp: value,
+          token: jwt,
         }),
       });
       const responseJson = await response.json();

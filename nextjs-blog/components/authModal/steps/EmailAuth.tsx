@@ -79,7 +79,7 @@ export default function EmailAuth() {
           },
           body: JSON.stringify({
             name: name,
-            email: email,
+            email_id: email,
             password: password,
           }),
         });
