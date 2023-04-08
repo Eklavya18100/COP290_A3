@@ -1,5 +1,6 @@
 // import logo from './logo.svg';
-import React from "react";
+import React from "react"
+import PageTemplate from "@components/reusable/template/PageTemplate.tsx";
 import st from "../../styles/product_pg/App.module.css"
 import project_data from "./data/projects";
 import { useRouter } from 'next/router'
@@ -46,19 +47,19 @@ function App() {
     aboutus : {is : "", description : ""}
   })
 
-  // useEffect( () => {
-  //   fetch(`${apiUrl}/product_profiles/${slug.id}`, {
-  //     method : 'GET', 
-  //     headers: {
-  //       "Content-Type": "application/json" 
-  //         // Authorization: `Bearer ${jwt}`,
-  //     },
-  //   }).then((response) => response.json().then(
-  //     (data) => {
-  //       SetState(data) ; 
-  //     }
-  //   ))
-  // }, [])
+  useEffect( () => {
+    fetch(`${apiUrl}/product_profiles/${slug.id}`, {
+      method : 'GET', 
+      headers: {
+        "Content-Type": "application/json" 
+          // Authorization: `Bearer ${jwt}`,
+      },
+    }).then((response) => response.json().then(
+      (data) => {
+        SetState(data) ; 
+      }
+    )).catch((err) => console.error(err));
+  }, [])
 
   function genobj(data){
     let about_us = data.about_us 
@@ -81,9 +82,9 @@ function App() {
   // };
 
   return (
-   <PageTemplate transparentNav={false} outsideApp darkBg={true} noFilter>
-     <div>
-      {/* <Navbar className={st.navbar} /> */}
+    <PageTemplate transparentNav={false} outsideApp darkBg={true} noFilter>
+    <div>
+      
       <div className={st.container}>
         <Header
           header_image_url={url1}
@@ -109,7 +110,7 @@ function App() {
         <MainContent obj={genobj(profileState)} className={st.main_content} />
       </div>
     </div>
-   </PageTemplate>
+  </PageTemplate>
   );
 }
 

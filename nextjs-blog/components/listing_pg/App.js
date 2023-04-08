@@ -1,13 +1,15 @@
 
 import React , {useEffect} from "react";
 import { useRouter } from 'next/router'
+
+import PageTemplate from "@components/reusable/template/PageTemplate.tsx";
 import Navbar from "./components/navbar"
 import Listing_Box  from "./components/listing_box";
 import Card  from "./components/card";
 import products from "./data/products"
 import Dropdown from "./components/dropdown"
 import st from "../../styles/listing_pg/app.module.css"
-import cross from "./images/cross.png" 
+import cross from "../../public/listing_pg/cross.png" 
 
 // {
 //   id : 1 , 
@@ -128,7 +130,7 @@ useEffect(() => {
                                                    obj = {gen_obj(obj)} key = {obj.p_uid} />)
       setCardsState(new_card_array) 
     })
-  );
+  ).catch((err) => console.error(err));
 }, [newState]);
  
 
@@ -138,8 +140,8 @@ useEffect(() => {
   const categories = ["Interior Designers & Decorators", "Architects & Building Designers", "Civil Engineers & Contractors",
                       "Design-Build Firms"]
   return (
+    <PageTemplate transparentNav={false} outsideApp darkBg={true} noFilter>
    <div>
-    <Navbar />
     <Listing_Box/>
     <div className = {st.container}>
         <div className={st.search_bars}>
@@ -173,6 +175,8 @@ useEffect(() => {
      
    </div>
   </div>
+
+</PageTemplate>
   );
 
   

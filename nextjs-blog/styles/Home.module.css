@@ -66,6 +66,10 @@
   color: #000000;
 }
 
+.box3:hover{
+  cursor : pointer ; 
+}
+
 .box4{
   grid-column: 2/-1;
   grid-row: 1/-1;
