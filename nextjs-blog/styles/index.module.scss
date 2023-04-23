@@ -1,0 +1,434 @@
+.headerContainer {
+  display: flex;
+  max-height: 85vh;
+  // border: 1px solid black;
+}
+
+.mainContainer {
+  width: 90vw;
+  margin: auto;
+}
+
+.mainContainer * {
+  // outline: 1px solid limegreen;
+}
+
+.mainContainer > *:nth-child(-n + 4) {
+  height: 92vh;
+}
+
+.mainContainer > *:not(:last-child) {
+  margin-bottom: 25vh;
+}
+
+.mainContainer > *:last-child {
+  margin-bottom: 5vh;
+}
+.headerTextContainer {
+  color: #f3226e;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.headerTextContainer * {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.headerTextContainer h1 {
+  font-size: 64px;
+}
+
+.headerTextContainer p {
+  margin: 50px auto 0 auto;
+}
+
+.headerTextContainer *:last-child {
+  color: #3f383880;
+  cursor: pointer;
+
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.headerTextContainer > *:last-child:hover {
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+.darkColorText {
+  // border:2px solid black;
+  padding-left:3rem;
+  color: #575757;
+}
+
+.darkColorText::first-letter {
+  color: #f3226e;
+}
+
+.headerImage {
+  // width: 50%;
+  height: inherit;
+  aspect-ratio: 1;
+  transform: scale(1.15);
+  -webkit-transform: scale(1.15);
+  -o-transform: scale(1.15);
+  -moz-transform: scale(1.15);
+  height: auto;
+  object-fit: contain;
+  // border: 1px solid black;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.marginBotSm {
+  margin-bottom: 5vh;
+}
+
+.awardsContainer {
+  display: flex;
+  height: 30vh;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.awardContainer {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  height: inherit;
+  justify-content: center;
+}
+
+.awardContainer img {
+  width: 100%;
+  height: 75%;
+  align-self: center;
+  object-fit: contain;
+}
+
+.awardsHeader {
+  font-size: 40px;
+}
+
+.awardContainer p {
+  font-size: 20px;
+  height: 25%;
+}
+
+.featureContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.featureContainer h1 {
+  text-align: center;
+  font-size: 50px;
+}
+
+.featureContainer p {
+  font-weight: 400;
+  font-size: 24px;
+  width: 50vw;
+  margin: 2vh auto;
+}
+
+.featureContainer > *:nth-child(2) {
+  margin: 5vh auto;
+}
+.testimonialsContainer > h1:first-child {
+  font-weight: 500;
+  font-size: 30px;
+}
+
+.testimonialsContainer > h1:not(:first-child) {
+  font-weight: 700;
+  font-size: 40px;
+}
+.featureImage {
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
+.featureDataContainer {
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.featureDataContainer:hover {
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  transform: scale(1.05);
+  background-color: rgba(211, 211, 213, 0.191) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.featureDataContainer p,
+.featureDataContainer h1 {
+  text-align: center;
+  width: auto;
+}
+
+.tItemImage {
+  // aspect-ratio: 1;
+  // height: 65vh;
+  width: 100%;
+  /* border: 1px solid black; */
+}
+
+.tItemContainer > div:first-child {
+  width: 60%;
+}
+.tItemContainer > div:last-child {
+  width: 40%;
+}
+
+.tItemContainer {
+  /* width: 100vw; */
+  /* border: 1px solid black; */
+
+  /* height: 30vh; */
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.tItemTitle {
+  font-weight: 700;
+  font-size: 50px;
+  margin: 5vh 0;
+  /* border: 1px solid black; */
+}
+.tItemContainer * {
+  /* border: 1px solid black; */
+}
+
+.tItemDataCont {
+  display: flex;
+  flex-direction: row;
+  height: 15vh;
+  flex-wrap: wrap;
+  margin: 2.5vh 0;
+  /* justify-content: space-evenly; */
+}
+
+.tItemBtn {
+  padding: 2.5vh;
+  flex-wrap: wrap;
+  width: 50%;
+  background-color: #f3226e;
+  border-radius: 20px;
+  margin: auto;
+  color: white;
+  font-size: 30px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+  cursor: pointer;
+}
+
+.tItemBtn:hover {
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.tItemDataImage {
+  width: 10%;
+  aspect-ratio: 1;
+}
+.tItemDataText {
+  text-align: left;
+  width: 80%;
+  margin: 0 5%;
+  height: fit-content;
+  align-self: center;
+  font-size: 30px;
+}
+
+.contactContainer {
+  width: 90vw;
+  padding: 4vw;
+  background-color: #f3226e;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 40px;
+  justify-content: space-between;
+}
+
+.contactContainer h1,
+.contactContainer p {
+  text-align: left;
+  color: white;
+}
+
+.contactContainer h1 {
+  font-size: 40px;
+}
+
+.contactContainer p {
+  font-size: 30px;
+}
+
+.contactContainer > div:first-child {
+  width: 80%;
+}
+
+.contactContainer > div:last-child {
+  display: flex;
+  width: 20%;
+}
+
+/* //* tons of CSS selectors! */
+.contactContainer > div:last-child div {
+  align-self: stretch;
+  background-color: white;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  padding: 1vw;
+  cursor: pointer;
+}
+
+.contactContainer > div:last-child div:hover {
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.961);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.contactContainer > div:last-child div h1 {
+  text-align: center;
+  color: #f3226e;
+}
+.featuresContainer {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  /* border: 1px solid black; */
+}
+
+@media screen and (max-width: 768px) {
+  .featureDataContainer {
+    width: 100% !important;
+    height: fit-content;
+    margin: 2vh 0;
+    padding: 5vh !important;
+  }
+
+  .tItemContainer > div:first-child,
+  .tItemContainer > div:last-child {
+    width: 100%;
+  }
+  .tItemContainer {
+    flex-direction: column-reverse !important;
+  }
+  .contactContainer > div:first-child,
+  .contactContainer > div:last-child {
+    width: 100%;
+  }
+
+  .contactContainer > div:last-child div {
+    padding: 3vw;
+    border-radius: 20px;
+    margin: 2vw auto;
+  }
+  .headerContainer {
+    flex-direction: column-reverse;
+  }
+  .headerTextContainer,
+  .headerImage {
+    
+    width: 100%;
+  }
+
+  .awardsContainer {
+    flex-direction: column;
+    height: fit-content;
+    gap: 5vh;
+  }
+  .awardContainer {
+    width: 100%;
+    height: fit-content;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 3vh;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .awardContainer:hover {
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+
+  .mainContainer > *:nth-child(-n + 4) {
+    height: fit-content;
+  }
+
+  .mainContainer * {
+    text-align: center !important;
+  }
+
+  .awardContainer img {
+    width: 70%;
+  }
+
+  .awardContainer p {
+    font-size: 20px;
+  }
+  .featureContainer p {
+    width: 100%;
+  }
+  .featureContainer {
+    height: fit-content !important;
+  }
+  .tItemDataText {
+    font-size: 1.3rem;
+    margin: 0;
+  }
+  .tItemDataImage {
+    width: 20%;
+  }
+}

@@ -130,6 +130,7 @@ export default function EmailVerification() {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
+          backgroundImage: "linear-gradient(315deg, #d8067a 0%, #f478bc 74%)"
           
         }}
       >

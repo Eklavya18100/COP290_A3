@@ -1,7 +1,7 @@
 .mainContainer {
     width: 90vw;
     margin: 4vw auto;
-    background-color: black;
+    background-color: #e13d6f;
     height: fit-content;
     padding: 4vw;
     border-radius: 20px;
@@ -9,6 +9,7 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 4vw;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
   
   .mainContainer > div:first-child {

@@ -46,7 +46,7 @@ export default function About() {
         <div className={st.circle} />
         <div className={st.largeHeader} highlightword="Let's">
           {" "}
-          design our house
+          design your house
         </div>
         <div className={st.smallHeader}>
         proVis is an online platform that offers a wide range of services related to home design and renovation.We provide a comprehensive platform for homeowners and design professionals, offering a wide range of tools and resources that can help simplify the home renovation process.
