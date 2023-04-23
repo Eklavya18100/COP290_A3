@@ -10,7 +10,7 @@ import { IoMail } from "@react-icons/all-files/io5/IoMail";
 import { RootState } from "../../../../redux/reducers";
 import useTranslation from "next-translate/useTranslation";
 import { RESET_PW } from "../../../../redux/actions/iam/resetPassword";
-import Spinner from "@components/reusable/loader/spinner";
+import Spinner from "@components/authModal/components/spinner";
 import {
   RESET_PW_REQUESTING,
   RESET_PW_SUCCESS,

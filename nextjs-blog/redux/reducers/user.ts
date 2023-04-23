@@ -1,4 +1,4 @@
-import { REMOVE_USER_SESSION_MEMORY } from "./storage.ts";
+import { REMOVE_USER_SESSION_MEMORY } from "./storage";
 
 export const FETCH_USER_FAILURE='FETCH_USER_FAILURE';
 export const FETCH_USER_SUCCESS='FETCH_USER_SUCCESS';

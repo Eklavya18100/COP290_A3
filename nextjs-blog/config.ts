@@ -6,7 +6,7 @@ export default {
         : process.env.NEXT_PUBLIC_PROD_EXTRACTION_API_URL,
     dataApiServerUrl: __DEV__ ? process.env.NEXT_PUBLIC_DEV_DATA_API_URL
         : process.env.NEXT_PUBLIC_PROD_DATA_API_URL,
-    apiUrl: __DEV__?process.env.NEXT_PUBLIC_DEV_API_URL:process.env.NEXT_PUBLIC_PROD_API_URL,
+    apiUrl: __DEV__?"http://127.0.0.1:8080":process.env.NEXT_PUBLIC_PROD_API_URL,
     webUrl: __DEV__ ? process.env.NEXT_PUBLIC_DEV_WEBSITE_URL
         : process.env.NEXT_PUBLIC_PROD_WEBSITE_URL,
     apiNgrokUrl: __DEV__ ? process.env.NEXT_PUBLIC_NGROK_API_URL

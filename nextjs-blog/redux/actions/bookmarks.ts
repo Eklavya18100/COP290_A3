@@ -14,7 +14,7 @@ export const ADD_BOOKMARK = 'ADD_BOOKMARK';
 export const REMOVE_BOOKMARK = 'REMOVE_BOOKMARK';
 
 import { all, select, put, call, fork } from "redux-saga/effects"
-import bookmarksAPI from '../api/bookmarks.ts';
+import bookmarksAPI from '../api/bookmarks';
 
 import * as Eff from "redux-saga/effects"
 const takeEvery:any = Eff.takeEvery
